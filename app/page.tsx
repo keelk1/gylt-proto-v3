@@ -142,6 +142,8 @@ export default function GyltWrapped() {
       // Track click on first slide to go to second slide
       if (currentSlide === 0) {
         trackClick("intro", "prototype")
+      if (currentSlide === 1) {
+        trackClick("choix de ton", "prototype")
       }
 
       setIsAnimating(true)
