@@ -117,8 +117,25 @@ export default function GyltWrapped() {
   const progress = useMotionValue(0)
   const opacity = useTransform(progress, [0, 100], [0, 1])
 
-  const trackedSlides = useRef<Set<number>>(new Set())
+  export default function GyltWrapped() {
+  /* --- states & refs --------------------------------------------------- */
+  const [currentSlide, setCurrentSlide] = useState(0);
+  /* … tes autres states … */
+  const trackedSlides = useRef<Set<number>>(new Set());
+  /* --- tracking automatique des slides --------------------------------- */
+  useEffect(() => {
+    // Sécurité : on vérifie que l’index existe bien
+    const phase = PHASE_KEYS[currentSlide];
+    if (!phase) return;
 
+    // On n’envoie le hit qu’une seule fois par slide
+    if (!trackedSlides.current.has(currentSlide)) {
+      trackClick(phase, "prototype");
+      trackedSlides.current.add(currentSlide);
+    }
+  }, [currentSlide]);
+  
+  const trackedSlides = useRef<Set<number>>(new Set())
   useEffect(() => {
     if (!trackedSlides.current.has(currentSlide)) {
       trackClick(PHASE_KEYS[currentSlide], "prototype")
