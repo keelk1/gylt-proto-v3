@@ -141,7 +141,7 @@ export default function GyltWrapped() {
     if (!isAnimating && imagesLoaded) {
       // Track click on first slide to go to second slide
       if (currentSlide === 0) {
-        trackClick("first-page", "prototype")
+        trackClick("intro", "prototype")
       }
 
       setIsAnimating(true)
