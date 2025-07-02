@@ -117,8 +117,33 @@ export default function GyltWrapped() {
   const progress = useMotionValue(0)
   const opacity = useTransform(progress, [0, 100], [0, 1])
 
+  const trackedSlides = useRef<Set<number>>(new Set())
+
+  useEffect(() => {
+    if (!trackedSlides.current.has(currentSlide)) {
+      trackClick(PHASE_KEYS[currentSlide], "prototype")
+      trackedSlides.current.add(currentSlide)
+    }
+  }, [currentSlide])
+  
   const totalSlides = 13
 
+  const PHASE_KEYS = [
+    "Intro",
+    "Choix de ton",
+    "Dépense totale",
+    "Catégorie top",
+    "Personnalité",
+    "Top dépenses",
+    "Savings Simplified",
+    "Detailed Savings",
+    "Partenaire",
+    "Alternatives",
+    "Confirmation",
+    "Feedback",
+    "Final",
+  ] as const
+  
   // Set images as loaded after a short delay
   useEffect(() => {
     const timer = setTimeout(() => {
