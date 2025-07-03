@@ -163,11 +163,6 @@ export default function GyltWrapped() {
     }
 
     if (!isAnimating && imagesLoaded) {
-      // Track click on first slide to go to second slide
-      if (currentSlide === 0) {
-        trackClick("intro", "prototype")
-      }
-
       setIsAnimating(true)
       setPreviousSlide(currentSlide)
       setDirection(1)
