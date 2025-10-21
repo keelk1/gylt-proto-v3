@@ -4,6 +4,8 @@ Overview
 
 The gylt‑proto‑v3 repository hosts the functional MVP of gYlt – a "Spotify Wrapped"‑style assistant that analyses open‑banking transactions and suggests one‑click switches to cheaper Telco/Energy/Insurance providers.
 
+link: https://prototype.gylt.space
+
 Key facts :
 
 Stack : Next.js 14 (App Router) + TypeScript + Tailwind CSS + Framer Motion
