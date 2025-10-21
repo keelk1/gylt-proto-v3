@@ -1,6 +1,6 @@
 # gylt‑proto‑v3 – Switch & Save FinTech Prototype
 
-✨ Overview
+Overview
 
 The gylt‑proto‑v3 repository hosts the functional MVP of gYlt – a "Spotify Wrapped"‑style assistant that analyses open‑banking transactions and suggests one‑click switches to cheaper Telco/Energy/Insurance providers.
 
@@ -14,7 +14,7 @@ Tracking : Google Apps Script webhook → Google Sheets for live funnel metr
 
 Status : Public beta – 30 users onboarded, 20 % completion to switch page
 
-🚀 Quick start
+Quick start
 
 # 1. Clone & install
 pnpm i           # or npm install / yarn
@@ -25,7 +25,7 @@ cp .env.example .env.local
 # 3. Launch dev server
 pnpm dev         # open http://localhost:3000
 
-🔧 Required env variables
+Required env variables
 
 Key
 
@@ -51,7 +51,7 @@ https://script.google.com/…
 
 Click tracking
 
-🗃️ Scripts
+Scripts
 
 Command
 
@@ -73,7 +73,7 @@ docker:db
 
 Spin up local Qdrant
 
-🌐 Deployment
+Deployment
 
 The current preview is auto‑deployed on Vercel via GitHub Actions (main branch → prototype.gylt.space). Environment secrets are configured in Vercel’s dashboard.
 
